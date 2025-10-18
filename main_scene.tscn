@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bthgkorusteqg" path="res://asset/scene.png" id="1_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://cbu1ko56wo52g" path="res://asset/foule_1.png" id="2_hq1ik"]
 [ext_resource type="Texture2D" uid="uid://dlfsbf2ehh68x" path="res://asset/freddy.png" id="2_nfk4m"]
-[ext_resource type="Script" uid="uid://blq71lmp7e6lp" path="res://people.gd" id="3_66tet"]
+[ext_resource type="Script" path="res://people.gd" id="3_66tet"]
 [ext_resource type="Texture2D" uid="uid://c66fo1rxb073f" path="res://asset/foule_2.png" id="3_nfk4m"]
 [ext_resource type="Texture2D" uid="uid://bdarrhd6j4yaa" path="res://asset/foule_3.png" id="4_66tet"]
 [ext_resource type="Texture2D" uid="uid://cmn6vre0lvvry" path="res://asset/foule_4.png" id="5_7ycvg"]
@@ -20,9 +20,9 @@ gradient = SubResource("Gradient_66tet")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wr18j"]
 particle_flag_disable_z = true
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 51.59
 direction = Vector3(0, -1, 0)
-spread = 60.181
+spread = 60.0
 initial_velocity_min = 100.0
 initial_velocity_max = 200.0
 angular_velocity_min = 100.0
@@ -54,10 +54,19 @@ internal_vertex_count = 7
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Freddy"]
 position = Vector2(33, 70)
-amount = 500
+amount = 1000
 lifetime = 1.5
 preprocess = 0.5
-explosiveness = 0.7
+explosiveness = 0.9
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_wr18j")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Freddy"]
+position = Vector2(33, 70)
+amount = 1000
+lifetime = 1.5
+preprocess = 0.5
+explosiveness = 0.9
 randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_wr18j")
 
