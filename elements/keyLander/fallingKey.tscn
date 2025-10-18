@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3eapdr83eyro"]
+
+[ext_resource type="Texture2D" uid="uid://dmpcf174sv81v" path="res://asset/arrow.svg" id="1_bkvlt"]
+
+[node name="FallingKey" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+scale = Vector2(0.035989, 0.035989)
+texture = ExtResource("1_bkvlt")

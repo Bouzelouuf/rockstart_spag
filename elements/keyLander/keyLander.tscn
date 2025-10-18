@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwm68c2ne5b0n"]
+
+[ext_resource type="Script" uid="uid://fvh075qxrvd8" path="res://elements/keyLander/key_lander.gd" id="1_k2fd6"]
+
+[node name="KeyLander" type="Node2D"]
+script = ExtResource("1_k2fd6")
