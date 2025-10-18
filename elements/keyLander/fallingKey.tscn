@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3eapdr83eyro"]
+[gd_scene load_steps=4 format=3 uid="uid://c3eapdr83eyro"]
 
 [ext_resource type="Texture2D" uid="uid://dmpcf174sv81v" path="res://asset/arrow.svg" id="1_bkvlt"]
+[ext_resource type="Script" uid="uid://5a3m7rkro3u2" path="res://elements/keyLander/falling_key.gd" id="1_vbuox"]
 
-[node name="FallingKey" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbuox"]
+radius = 16.0312
+
+[node name="fallingKey" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_vbuox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 0.785398
 scale = Vector2(0.035989, 0.035989)
 texture = ExtResource("1_bkvlt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vbuox")

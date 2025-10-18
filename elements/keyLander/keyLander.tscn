@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwm68c2ne5b0n"]
+[gd_scene load_steps=5 format=3 uid="uid://cwm68c2ne5b0n"]
 
 [ext_resource type="Script" uid="uid://fvh075qxrvd8" path="res://elements/keyLander/key_lander.gd" id="1_k2fd6"]
 
-[node name="KeyLander" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2fd6"]
+radius = 30.0
+
+[sub_resource type="Gradient" id="Gradient_k2fd6"]
+offsets = PackedFloat32Array(0.207792, 0.461039, 0.480519)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.451287, 0.285485, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ndc3r"]
+gradient = SubResource("Gradient_k2fd6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1.355, 0)
+
+[node name="keyLander" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_k2fd6")
+scoreThresholds = Array[float]([10.0, -10.0])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k2fd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_ndc3r")

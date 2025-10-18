@@ -63,17 +63,24 @@ scale = Vector2(3.98047, 3.58242)
 texture = ExtResource("5_7ycvg")
 
 [node name="UpLander" parent="." instance=ExtResource("8_66tet")]
-position = Vector2(81, 621)
+position = Vector2(105, 609)
 key_str = "up"
+key_rotation = -90
+scoreThresholds = Array[int]([10, -10])
 
 [node name="DownLander" parent="." instance=ExtResource("8_66tet")]
-position = Vector2(81, 582)
+position = Vector2(104, 542)
 key_str = "down"
+key_rotation = 90
+scoreThresholds = Array[int]([10, -10])
 
 [node name="LeftLander" parent="." instance=ExtResource("8_66tet")]
-position = Vector2(81, 544)
+position = Vector2(104, 477)
 key_str = "left"
+key_rotation = 180
+scoreThresholds = Array[int]([10, -10])
 
 [node name="RightLander" parent="." instance=ExtResource("8_66tet")]
-position = Vector2(81, 505)
+position = Vector2(104, 411)
 key_str = "right"
+scoreThresholds = Array[int]([10, -10])
