@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bpetbsg68bkw3"]
+[gd_scene load_steps=19 format=3 uid="uid://bpetbsg68bkw3"]
 
 [ext_resource type="Texture2D" uid="uid://bthgkorusteqg" path="res://asset/scene.png" id="1_qvu5t"]
 [ext_resource type="Texture2D" uid="uid://chfalqkfkiqal" path="res://asset/Untitled 10-18-2025 02-06-48.png" id="2_pi0uh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c66fo1rxb073f" path="res://asset/foule_2.png" id="5_cj0ow"]
 [ext_resource type="Texture2D" uid="uid://bdarrhd6j4yaa" path="res://asset/foule_3.png" id="6_xavy2"]
 [ext_resource type="Texture2D" uid="uid://cmn6vre0lvvry" path="res://asset/foule_4.png" id="7_7l8gs"]
+[ext_resource type="Texture2D" uid="uid://b3pgxdud66ni4" path="res://asset/arrow.png" id="8_pi0uh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66tet"]
 atlas = ExtResource("2_pi0uh")
@@ -81,19 +82,27 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1023.0
+offset_bottom = 627.0
+color = Color(0, 0, 0, 1)
+
 [node name="Scene" type="Sprite2D" parent="."]
-position = Vector2(256.08, 163.325)
-scale = Vector2(2.00063, 1.26035)
+position = Vector2(445.5, 314.5)
+scale = Vector2(3.43359, 2.41797)
 texture = ExtResource("1_qvu5t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(253, 182)
+position = Vector2(466, 377)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u0ygc")
 autoplay = "default"
-frame_progress = 0.126579
+frame = 2
+frame_progress = 0.337271
 
 [node name="People" type="Node2D" parent="."]
-position = Vector2(-11, -125)
+position = Vector2(-63, -144)
+scale = Vector2(1.84305, 1.70897)
 script = ExtResource("3_hrphr")
 
 [node name="Foule1" type="Sprite2D" parent="People"]
@@ -115,3 +124,29 @@ texture = ExtResource("6_xavy2")
 position = Vector2(272, 218.4)
 scale = Vector2(2, 1.8)
 texture = ExtResource("7_7l8gs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.877616, 0.877616, 0.877616, 1)
+self_modulate = Color(0.54099, 0.54099, 0.54099, 1)
+offset_left = 884.0
+offset_right = 1025.0
+offset_bottom = 627.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.008
+anchor_right = 0.915
+anchor_bottom = 0.995
+offset_left = -3.998
+offset_top = -0.0160003
+offset_right = 3.985
+offset_bottom = 0.134949
+color = Color(0.796243, 0.796243, 0.796243, 1)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(957, 96)
+scale = Vector2(2, 2)
+texture = ExtResource("8_pi0uh")
