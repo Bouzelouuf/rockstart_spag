@@ -1,0 +1,16 @@
+{
+  "songs": [
+    {
+      "id": "song1",
+      "name": "Level 1",
+      "music": "res://asset/songs/song1.mp3",
+      "chart": "res://charts/song1_chart.json"
+    },
+    {
+      "id": "song2",
+      "name": "Level 2",
+      "music": "res://asset/songs/song2.mp3",
+      "chart": "res://charts/song2_chart.json"
+    }
+  ]
+}

@@ -14,6 +14,10 @@ config/name="rockstar"
 run/main_scene="uid://sq0nc4rljeyb"
 config/features=PackedStringArray("4.4", "Mobile")
 
+[autoload]
+
+SongManager="*res://SongManager.gd"
+
 [display]
 
 window/size/viewport_width=1024

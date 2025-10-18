@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ee7hvui2b0bt"
+path="res://.godot/imported/ACDC - HIGH VOLTAGE in 1 Minute.mp3-a78da1395838cc9348efd482ef1886e8.mp3str"
+
+[deps]
+
+source_file="res://asset/ACDC - HIGH VOLTAGE in 1 Minute.mp3"
+dest_files=["res://.godot/imported/ACDC - HIGH VOLTAGE in 1 Minute.mp3-a78da1395838cc9348efd482ef1886e8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
