@@ -17,16 +17,17 @@ func display_score(score: float, stats: Dictionary, combo: int):
 	var accuracy = (hit_notes * 100.0 / total) if total > 0 else 0
 
 	var text = ""
-	text += "=== LEVEL COMPLETE ===\n"
-	text += "Score: %d\n" % int(score)
-	text += "Perfect: %d \n" % [stats["perfect"], stats["perfect"]]
-	text += "Good: %d (%.1f%%)\n" % [stats["good"], stats["good"]]
-	text += "OK: %d (%.1f%%)\n" % [stats["ok"], stats["ok"]]
-	text += "Late: %d (%.1f%%)\n" % [stats["late"], stats["late"] ]
-	text += "Miss: %d (%.1f%%)\n" % [stats["miss"], stats["miss"]]
+	text += "=== LEVEL COMPLETE ===\n\n"
+	text += "Score: " + str(int(score)) + "\n\n"
+	text += "Perfect: " + str(stats["perfect"]) + "\n"
+	text += "Good: " + str(stats["good"]) + "\n"
+	text += "OK: " + str(stats["ok"]) + "\n"
+	text += "Late: " + str(stats["late"]) + "\n"
+	text += "Miss: " + str(stats["miss"]) + "\n\n"
+
 	text += "======================\n"
-	text += "Max Combo: %d\n" % combo
-	text += "Accuracy: %.1f%%" % accuracy
+	text += "Max Combo: " + str(combo) + "\n"
+	text += "Accuracy: " + str(accuracy) + "%"
 	resume_score_label.text = text
 
 func on_retry_pressed():
