@@ -3,7 +3,7 @@ extends Area2D
 @export var key_str: String
 @export var key_rotation: int = 0
 @export var scoreThresholds: Array[int]
-var keySpeed: int = 100
+@export var keyScreentime: float = 2.5
 var keyFile: PackedScene = preload("./fallingKey.tscn")
 var screenSize: Vector2
 var collisionRadius: float
@@ -44,10 +44,10 @@ func spawn_key():
 	var key = keyFile.instantiate()
 	add_child(key)
 	#keyArr.append(key)
-	key.speed = keySpeed
 	key.keyName = key_str
 	key.position.x = screenSize.x - position.x
 	key.rotation_degrees = key_rotation
+	key.speed = key.position.x / keyScreentime
 	#key.bye.connect(pop_key)
 
 
