@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4wj7gm21xlpw"]
 
 [ext_resource type="Script" uid="uid://dusjgso1fo35l" path="res://script/audio_stream_player.gd" id="1_n7djy"]
-[ext_resource type="AudioStream" uid="uid://cmqjvykdnltcc" path="res://asset/songs/angrybaby_-_put_it_down_(z3.fm).mp3" id="2_n7djy"]
+[ext_resource type="AudioStream" uid="uid://c7x18ka8h6ilk" path="res://asset/songs/song1.mp3" id="2_n7djy"]
 
 [node name="SongAnalyzer" type="Node2D"]
 script = ExtResource("1_n7djy")

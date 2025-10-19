@@ -3,20 +3,20 @@
 	{
 	  "id": "song1",
 	  "name": "Level 1",
-	  "music": "res://asset/songs/song1.mp3",
-	  "chart": "res://charts/song1_chart.json"
-	},
-	{
-	  "id": "song2",
-	  "name": "Level 2",
 	  "music": "res://asset/songs/song2.mp3",
 	  "chart": "res://charts/song2_chart.json"
 	},
 	{
+	  "id": "song2",
+	  "name": "Level 2",
+	  "music": "res://asset/songs/song1.mp3",
+	  "chart": "res://charts/song1_chart.json"
+	},
+	{
 	  "id": "song3",
 	  "name": "Level 3",
-	  "music": "res://asset/songs/angrybaby_-_put_it_down_(z3.fm).mp3",
-	  "chart": "res://charts/angrybaby_-_put_it_down_(z3.fm)_chart.json"
+	  "music": "res://asset/songs/angrybaby_-_put_it_down.mp3",
+	  "chart": "res://charts/angrybaby_-_put_it_down_chart.json"
 	}
   ]
 }
