@@ -27,6 +27,7 @@ SongManager="*res://script/SongManager.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=628
+window/stretch/mode="canvas_items"
 <<<<<<<HEADwindow/size/viewport_height=628
 
 [dotnet]

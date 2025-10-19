@@ -24,10 +24,6 @@ func display_score(score: float, stats: Dictionary, combo: int):
 	text += "OK: " + str(stats["ok"]) + "\n"
 	text += "Late: " + str(stats["late"]) + "\n"
 	text += "Miss: " + str(stats["miss"]) + "\n\n"
-
-	text += "======================\n"
-	text += "Max Combo: " + str(combo) + "\n"
-	text += "Accuracy: " + str(accuracy) + "%"
 	resume_score_label.text = text
 
 func on_retry_pressed():
