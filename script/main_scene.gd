@@ -87,3 +87,11 @@ func spawn_note(note: Dictionary):
 	if key_landers.has(key_direction):
 		var key_lander = key_landers[key_direction]
 		key_lander.spawn_key(beat_time)
+
+
+func _on_down_lander_score_up(addendum: int) -> void:
+	pass # Replace with function body.
+
+
+func _on_up_lander_score_up(addendum: int) -> void:
+	pass # Replace with function body.

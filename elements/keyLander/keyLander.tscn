@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwm68c2ne5b0n"]
+[gd_scene load_steps=6 format=3 uid="uid://cwm68c2ne5b0n"]
 
 [ext_resource type="Script" uid="uid://fvh075qxrvd8" path="res://elements/keyLander/key_lander.gd" id="1_k2fd6"]
+[ext_resource type="FontFile" uid="uid://c5gw3c5euwgx1" path="res://asset/funkrocker/PressStart2P-vaV7.ttf" id="2_ndc3r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2fd6"]
 radius = 30.0
 
 [sub_resource type="Gradient" id="Gradient_k2fd6"]
 offsets = PackedFloat32Array(0.207792, 0.461039, 0.480519)
-colors = PackedColorArray(1, 1, 1, 0, 1, 0.451287, 0.285485, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ndc3r"]
 gradient = SubResource("Gradient_k2fd6")
@@ -25,3 +26,22 @@ shape = SubResource("CircleShape2D_k2fd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_ndc3r")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 39.0
+offset_right = 77.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.436332
+pivot_offset = Vector2(65, 10)
+theme_override_fonts/font = ExtResource("2_ndc3r")
+theme_override_font_sizes/font_size = 20
+text = "
+"

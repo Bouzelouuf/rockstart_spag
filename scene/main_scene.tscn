@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bpetbsg68bkw3"]
+[gd_scene load_steps=27 format=3 uid="uid://bpetbsg68bkw3"]
 
 [ext_resource type="Script" uid="uid://brhi2whg1tfdf" path="res://script/main_scene.gd" id="1_hrphr"]
 [ext_resource type="Texture2D" uid="uid://bthgkorusteqg" path="res://asset/scene.png" id="1_qvu5t"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cmn6vre0lvvry" path="res://asset/foule_4.png" id="7_7l8gs"]
 [ext_resource type="Texture2D" uid="uid://b3pgxdud66ni4" path="res://asset/arrow.png" id="8_pi0uh"]
 [ext_resource type="PackedScene" uid="uid://cwm68c2ne5b0n" path="res://elements/keyLander/keyLander.tscn" id="10_86xya"]
+[ext_resource type="PackedScene" uid="uid://h7nkfr7li7ba" path="res://scene/pause.tscn" id="11_cj0ow"]
+[ext_resource type="Script" uid="uid://ua4mkre7res8" path="res://script/score.gd" id="12_xavy2"]
+[ext_resource type="FontFile" uid="uid://c5gw3c5euwgx1" path="res://asset/funkrocker/PressStart2P-vaV7.ttf" id="13_7l8gs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66tet"]
 atlas = ExtResource("2_pi0uh")
@@ -201,3 +204,48 @@ key_rotation = 180
 position = Vector2(565, 419)
 scale = Vector2(0.7, 0.7)
 key_str = "right"
+
+[node name="pause" parent="." instance=ExtResource("11_cj0ow")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 502.0
+offset_top = 268.0
+offset_right = 502.0
+offset_bottom = 268.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Score" type="CanvasLayer" parent="."]
+script = ExtResource("12_xavy2")
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 55.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.654902, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_7l8gs")
+theme_override_font_sizes/font_size = 20
+text = "Score:
+"
+
+[node name="ComboLabel" type="Label" parent="Score"]
+offset_left = 676.0
+offset_top = 238.0
+offset_right = 716.0
+offset_bottom = 261.0
+rotation = 0.567232
+theme_override_colors/font_color = Color(0.654902, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_7l8gs")
+theme_override_font_sizes/font_size = 30
+
+[connection signal="comboUp" from="UpLander" to="Score" method="_on_up_lander_combo_up"]
+[connection signal="scoreUp" from="UpLander" to="Score" method="_on_up_lander_score_up"]
+[connection signal="comboUp" from="DownLander" to="Score" method="_on_down_lander_combo_up"]
+[connection signal="scoreUp" from="DownLander" to="Score" method="_on_down_lander_score_up"]
+[connection signal="comboUp" from="LeftLander" to="pause" method="_on_left_lander_combo_up"]
+[connection signal="scoreUp" from="LeftLander" to="Score" method="_on_left_lander_score_up"]
+[connection signal="comboUp" from="RightLander" to="Score" method="_on_right_lander_combo_up"]
+[connection signal="scoreUp" from="RightLander" to="Score" method="_on_right_lander_score_up"]
