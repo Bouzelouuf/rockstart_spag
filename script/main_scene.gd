@@ -19,6 +19,9 @@ var started = false
 	"down": $DownLander
 }
 
+var total_score = 0
+var max_combo = 0
+
 func _ready():
 	player_particles2.visible = false
 	player_particles.visible = false
@@ -30,6 +33,38 @@ func _ready():
 		load_music(song["music"])
 		load_chart(song["chart"])
 		start_game()
+	music_player.finished.connect(song_finished)
+
+func song_finished():
+	var combined_stats = {
+	"perfect": 0,
+	"good": 0,
+	"ok": 0,
+	"late": 0,
+	"miss": 0,
+	"total_notes": 0
+}
+	for lander in key_landers.values():
+		var lander_stats = lander.get_stats()
+		combined_stats["perfect"] += lander_stats["perfect"]
+		combined_stats["good"] += lander_stats["good"]
+		combined_stats["ok"] += lander_stats["ok"]
+		combined_stats["late"] += lander_stats["late"]
+		combined_stats["miss"] += lander_stats["miss"]
+		combined_stats["total_notes"] += lander_stats["total_notes"]
+		total_score += lander.total_score
+		if lander.max_combo > max_combo:
+			max_combo = lander.max_combo
+	await get_tree().create_timer(2.0).timeout
+	var end_screen = load("res://scene/end.tscn").instantiate()
+	var combolabel = $Score/ComboLabel
+	var scorelabel = $Score/ScoreLabel
+	scorelabel.visible = false
+	combolabel.visible = false
+	get_tree().root.add_child(end_screen)
+	end_screen.display_score(total_score, combined_stats, max_combo)
+	#end menu later
+
 
 func on_score_up(score: int):
 	if score >= 100:

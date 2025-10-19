@@ -21,6 +21,14 @@ var max_combo = 33
 var total_score = 0
 var shake_offset = Vector2.ZERO
 
+var stats = {
+	"perfect": 0,
+	"good": 0,
+	"ok": 0,
+	"late": 0,
+	"miss": 0,
+	"total_notes": 0
+}
 
 func _ready() -> void:
 	original_visual_position = visual.position
@@ -46,20 +54,24 @@ func _physics_process(delta: float) -> void:
 					text = "PERFECT"
 					color = Color.GREEN
 					points = 100
+					stats["perfect"] += 1
 					increment_combo()
 				elif offset < 20:
 					text = "GOOD"
 					color = Color.ORANGE
 					points = 50
+					stats["good"] += 1
 					increment_combo()
 				elif offset < 30:
 					text = "OK"
 					color = Color.YELLOW
 					points = 20
+					stats["ok"] += 1
 					increment_combo()
 				else:
 					color = Color.RED
 					text = "LATE"
+					stats["late"] += 1
 					shake_zone()
 					reset_combo()
 				flash_color(color)
@@ -122,3 +134,6 @@ func spawn_key(beat_time: float = 0.0):
 	key.rotation_degrees = key_rotation
 	print("BEAT_TIME: ", beat_time)
 	key.speed = key.position.distance_to(Vector2(0,0)) / keyScreenTime
+
+func get_stats()->Dictionary:
+	return stats.duplicate()

@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://70ish0w3yiqi"]
+
+[ext_resource type="FontFile" uid="uid://djgnvs4vaxeks" path="res://asset/funkrocker/Funkrocker.otf" id="1_acqqh"]
+[ext_resource type="Script" path="res://script/end.gd" id="1_u4okq"]
+[ext_resource type="FontFile" uid="uid://fvyr5fotqip" path="res://asset/funkrocker/Metal Lord.otf" id="2_u4okq"]
+
+[node name="pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4okq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.273
+anchor_top = 0.135
+anchor_right = 0.758
+anchor_bottom = 0.334
+offset_left = -18.552
+offset_top = -59.78
+offset_right = -19.192
+offset_bottom = -50.752
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_acqqh")
+theme_override_font_sizes/font_size = 90
+text = "THE END"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -165.0
+offset_right = 107.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u4okq")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="retry_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u4okq")
+theme_override_font_sizes/font_size = 30
+text = "RETRY"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="resume_score_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_u4okq")
+theme_override_font_sizes/font_size = 30
+vertical_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="exit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u4okq")
+theme_override_font_sizes/font_size = 30
+text = "EXIT"
