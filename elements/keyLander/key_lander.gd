@@ -2,14 +2,14 @@ extends Area2D
 
 @export var key_str: String
 @export var key_rotation: int = 0
-@export var scoreThresholds: Array[int] = [50, 30, 10]
+@export var keyScreenTime: float = 3.5
+@export var scoreThresholds: Array[int]
 
 @onready var visual = $Sprite2D
 @onready var judgement_label = $Label
 var original_visual_position: Vector2
 
-var keySpeed: int = 180
-var keyFile: PackedScene = preload("res://elements/keyLander/fallingKey.tscn")
+var keyFile: PackedScene = preload("./fallingKey.tscn")
 var screenSize: Vector2
 var collisionRadius: float
 
@@ -122,9 +122,11 @@ func spawn_key(beat_time: float = 0.0):
 	
 	key.speed = keySpeed
 	key.keyName = key_str
-	key.expected_beat_time = beat_time
-	key.global_position = Vector2(global_position.x, -50)
+	key.global_position.y = -50
 	key.rotation_degrees = key_rotation
+	print("BEAT_TIME: ", beat_time)
+	key.speed = key.position.distance_to(Vector2(0,0)) / keyScreenTime
+	#key.bye.connect(pop_key)
 
 func calculate_fall_duration() -> float:
 	var spawn_y = -50.0

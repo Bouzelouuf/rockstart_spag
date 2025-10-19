@@ -8,7 +8,7 @@ radius = 30.0
 
 [sub_resource type="Gradient" id="Gradient_k2fd6"]
 offsets = PackedFloat32Array(0.207792, 0.461039, 0.480519)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.431373, 0.286275, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ndc3r"]
 gradient = SubResource("Gradient_k2fd6")
@@ -25,6 +25,7 @@ scoreThresholds = Array[int]([10, -10])
 shape = SubResource("CircleShape2D_k2fd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
 texture = SubResource("GradientTexture2D_ndc3r")
 
 [node name="Label" type="Label" parent="."]

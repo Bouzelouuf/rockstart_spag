@@ -8,6 +8,9 @@ var note_chart = []
 var current_note_index = 0
 var fall_duration = 0.0
 var game_start_time = 0.0
+var start_delay = 0.0
+var elapsed_time = 0.0
+var started = false
 
 @onready var key_landers = {
 	"left": $LeftLander,
@@ -19,7 +22,7 @@ var game_start_time = 0.0
 func _ready():
 	player_particles2.visible = false
 	player_particles.visible = false
-	var song = SongManager.set_current_song("song1")
+	var song = SongManager.set_current_song("song3")
 	for key_lander in key_landers.values():
 		key_lander.scoreUp.connect(on_score_up)
 		
@@ -55,27 +58,38 @@ func load_chart(chart_path: String):
 func start_game():
 	if key_landers.size() > 0:
 		var first_lander = key_landers.values()[0]
-		fall_duration = first_lander.calculate_fall_duration()
+		fall_duration = first_lander.keyScreenTime
 	var first_beat = note_chart[0]["time"] if note_chart.size() > 0 else 0.0
 	var delay_needed = max(0, fall_duration - first_beat)
 	game_start_time = Time.get_ticks_msec() / 1000.0
-	if delay_needed > 0:
-		await get_tree().create_timer(delay_needed).timeout
-	music_player.play()
+	start_delay = delay_needed
+	#if delay_needed > 0:
+		#await get_tree().create_timer(delay_needed).timeout
 
-func _process(delta):
-	if not music_player.playing:
-		return
-	var music_time = music_player.get_playback_position()
+
+func _physics_process(delta: float) -> void:
+	elapsed_time += delta
+	#print("ELAPSED_TIME: ", elapsed_time)
+	#print("START_DELAY: ", start_delay)
+	if elapsed_time >= start_delay and not started:
+		started = true
+		music_player.play()
+	# if started:
+	var music_time = music_player.get_playback_position() + AudioServer.get_time_since_last_mix()
+	music_time -= AudioServer.get_output_latency()
 	if music_time == null or music_time < 0:
 		return
 	while current_note_index < note_chart.size():
+		#print(current_note_index)
 		var note = note_chart[current_note_index]
 		var beat_time = note["time"]
-		var spawn_time = beat_time - fall_duration
-		var actual_spawn_time = max(0, spawn_time)
-		if music_time >= actual_spawn_time:
+		var spawn_time = beat_time - fall_duration + start_delay
+		#var actual_spawn_time = max(0, spawn_time)
+		if music_time >= spawn_time:
 			spawn_note(note)
+			print("ELAPSED_TIME: ", elapsed_time)
+			print("MUSIC_TIME: ", music_time)
+			print("ACTUAL_SPAWN_TIME: ", spawn_time)
 			current_note_index += 1
 		else:
 			break

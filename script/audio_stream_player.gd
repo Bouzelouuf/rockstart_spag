@@ -19,7 +19,7 @@ func _process(delta):
 	if spectrum != null:
 		var bass_energy = spectrum.get_magnitude_for_frequency_range(20, 150).length()
 		var current_time = audio_player.get_playback_position()
-		if bass_energy > 0.025 and (current_time - last_beat_time) > 0.2:
+		if bass_energy > 0.02 and (current_time - last_beat_time) > 0.4:
 			var key = available_keys[randi() % available_keys.size()]
 			last_key_index = (last_key_index + 1) % available_keys.size()
 			var note = {

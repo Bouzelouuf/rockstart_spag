@@ -13,6 +13,7 @@ config_version=5
 config/name="rockstar"
 run/main_scene="uid://sq0nc4rljeyb"
 config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
 
 [audio]
 
@@ -26,6 +27,7 @@ SongManager="*res://script/SongManager.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=628
+<<<<<<<HEADwindow/size/viewport_height=628
 
 [dotnet]
 
