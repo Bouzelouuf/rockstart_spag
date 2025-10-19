@@ -2,7 +2,7 @@ extends Node2D
 
 var keyName: String
 var speed: int
-
+var expected_beat_time: float = 0.0
 #signal bye
 
 # Called when the node enters the scene tree for the first time.
@@ -16,9 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if global_position.x < 0:
-		print("FREED %s" % keyName)
-		#bye.emit()
+	if global_position.y > get_viewport_rect().size.y + 50:
 		queue_free()
 	
 	position.y += speed * delta

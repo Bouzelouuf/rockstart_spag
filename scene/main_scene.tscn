@@ -116,12 +116,12 @@ offset_bottom = 627.0
 color = Color(0, 0, 0, 1)
 
 [node name="Scene" type="Sprite2D" parent="."]
-position = Vector2(445.5, 314.5)
-scale = Vector2(3.43359, 2.41797)
+position = Vector2(514, 314.5)
+scale = Vector2(3.96875, 2.41797)
 texture = ExtResource("1_qvu5t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(466, 377)
+position = Vector2(537, 391)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u0ygc")
 autoplay = "default"
@@ -147,7 +147,7 @@ randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_hrphr")
 
 [node name="People" type="Node2D" parent="."]
-position = Vector2(-63, -144)
+position = Vector2(26, -141)
 scale = Vector2(1.84305, 1.70897)
 script = ExtResource("3_hrphr")
 
@@ -171,27 +171,6 @@ position = Vector2(272, 218.4)
 scale = Vector2(2, 1.8)
 texture = ExtResource("7_7l8gs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0.877616, 0.877616, 0.877616, 1)
-self_modulate = Color(0.54099, 0.54099, 0.54099, 1)
-offset_left = 884.0
-offset_right = 1025.0
-offset_bottom = 627.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.078
-anchor_top = 0.008
-anchor_right = 0.915
-anchor_bottom = 0.995
-offset_left = -63.998
-offset_top = -0.0160003
-offset_right = 3.985
-offset_bottom = 0.13501
-color = Color(0.796243, 0.796243, 0.796243, 1)
-
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(957, 96)
@@ -201,24 +180,24 @@ texture = ExtResource("8_pi0uh")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="UpLander" parent="." instance=ExtResource("10_86xya")]
-position = Vector2(397, 610)
+position = Vector2(439, 419)
 scale = Vector2(0.7, 0.7)
 key_str = "up"
 key_rotation = -90
 
 [node name="DownLander" parent="." instance=ExtResource("10_86xya")]
-position = Vector2(439, 610)
+position = Vector2(481, 419)
 scale = Vector2(0.7, 0.7)
 key_str = "down"
 key_rotation = 90
 
 [node name="LeftLander" parent="." instance=ExtResource("10_86xya")]
-position = Vector2(481, 610)
+position = Vector2(523, 419)
 scale = Vector2(0.7, 0.7)
 key_str = "left"
 key_rotation = 180
 
 [node name="RightLander" parent="." instance=ExtResource("10_86xya")]
-position = Vector2(523, 610)
+position = Vector2(565, 419)
 scale = Vector2(0.7, 0.7)
 key_str = "right"
