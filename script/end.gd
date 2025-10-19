@@ -19,11 +19,11 @@ func display_score(score: float, stats: Dictionary, combo: int):
 	var text = ""
 	text += "=== LEVEL COMPLETE ===\n"
 	text += "Score: %d\n" % int(score)
-	text += "Perfect: %d (%.1f%%)\n" % [stats["perfect"], stats["perfect"] * 100.0 / total]
-	text += "Good: %d (%.1f%%)\n" % [stats["good"], stats["good"] * 100.0 / total]
-	text += "OK: %d (%.1f%%)\n" % [stats["ok"], stats["ok"] * 100.0 / total]
-	text += "Late: %d (%.1f%%)\n" % [stats["late"], stats["late"] * 100.0 / total]
-	text += "Miss: %d (%.1f%%)\n" % [stats["miss"], stats["miss"] * 100.0 / total]
+	text += "Perfect: %d \n" % [stats["perfect"], stats["perfect"]]
+	text += "Good: %d (%.1f%%)\n" % [stats["good"], stats["good"]]
+	text += "OK: %d (%.1f%%)\n" % [stats["ok"], stats["ok"]]
+	text += "Late: %d (%.1f%%)\n" % [stats["late"], stats["late"] ]
+	text += "Miss: %d (%.1f%%)\n" % [stats["miss"], stats["miss"]]
 	text += "======================\n"
 	text += "Max Combo: %d\n" % combo
 	text += "Accuracy: %.1f%%" % accuracy

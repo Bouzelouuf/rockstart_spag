@@ -25,7 +25,7 @@ var max_combo = 0
 func _ready():
 	player_particles2.visible = false
 	player_particles.visible = false
-	var song = SongManager.set_current_song("song3")
+	var song = SongManager.set_current_song(SongManager.selected_song_id)
 	for key_lander in key_landers.values():
 		key_lander.scoreUp.connect(on_score_up)
 		

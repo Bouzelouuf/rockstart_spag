@@ -2,6 +2,7 @@ extends Node
 
 var songs_data = {}
 var current_song = null
+var selected_song_id = "song1"
 
 func _ready():
 	load_songs_config()

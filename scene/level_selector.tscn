@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://sq0nc4rljeyb"]
+[gd_scene load_steps=4 format=3 uid="uid://cm3qq5oe1geav"]
 
-[ext_resource type="Script" uid="uid://64nifbtugn8m" path="res://script/menu.gd" id="1_bo06a"]
-[ext_resource type="FontFile" uid="uid://djgnvs4vaxeks" path="res://asset/funkrocker/Funkrocker.otf" id="2_15se8"]
-[ext_resource type="FontFile" uid="uid://fvyr5fotqip" path="res://asset/funkrocker/Metal Lord.otf" id="3_xs5te"]
+[ext_resource type="Script" uid="uid://dtsq16ok1xgff" path="res://script/level_selector.gd" id="1_ohffd"]
+[ext_resource type="FontFile" uid="uid://djgnvs4vaxeks" path="res://asset/funkrocker/Funkrocker.otf" id="2_kscuv"]
+[ext_resource type="FontFile" uid="uid://fvyr5fotqip" path="res://asset/funkrocker/Metal Lord.otf" id="3_8wjyj"]
 
-[node name="menu" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bo06a")
+script = ExtResource("1_ohffd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -23,6 +23,7 @@ offset_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.273
@@ -35,7 +36,7 @@ offset_right = -0.192017
 offset_bottom = 0.247986
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_15se8")
+theme_override_fonts/font = ExtResource("2_kscuv")
 theme_override_font_sizes/font_size = 90
 text = "ROCK STAR"
 horizontal_alignment = 1
@@ -60,40 +61,51 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xs5te")
+theme_override_fonts/font = ExtResource("3_8wjyj")
 theme_override_font_sizes/font_size = 60
-text = "MENU"
+text = "Levels"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="play_button" type="Button" parent="VBoxContainer"]
+[node name="song1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xs5te")
+theme_override_fonts/font = ExtResource("3_8wjyj")
 theme_override_font_sizes/font_size = 30
-text = "PLAY"
+text = "level1"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="level_button" type="Button" parent="VBoxContainer"]
+[node name="song2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xs5te")
+theme_override_fonts/font = ExtResource("3_8wjyj")
 theme_override_font_sizes/font_size = 30
-text = "level"
+text = "level 2"
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="exit_button" type="Button" parent="VBoxContainer"]
+[node name="song3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xs5te")
+theme_override_fonts/font = ExtResource("3_8wjyj")
 theme_override_font_sizes/font_size = 30
-text = "EXIT"
+text = "level 3"
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_8wjyj")
+theme_override_font_sizes/font_size = 30
+text = "back"
