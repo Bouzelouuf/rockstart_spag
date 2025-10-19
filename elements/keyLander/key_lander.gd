@@ -19,8 +19,6 @@ var current_combo = 0
 signal comboUp(addendum: int)
 var max_combo = 33
 var total_score = 0
-
-
 var shake_offset = Vector2.ZERO
 
 
@@ -118,18 +116,9 @@ func shake_zone():
 
 func spawn_key(beat_time: float = 0.0):
 	var key = keyFile.instantiate()
-	get_parent().add_child(key)
-	
-	key.speed = keySpeed
+	add_child(key)
 	key.keyName = key_str
 	key.global_position.y = -50
 	key.rotation_degrees = key_rotation
 	print("BEAT_TIME: ", beat_time)
 	key.speed = key.position.distance_to(Vector2(0,0)) / keyScreenTime
-	#key.bye.connect(pop_key)
-
-func calculate_fall_duration() -> float:
-	var spawn_y = -50.0
-	var target_y = global_position.y
-	var distance = target_y - spawn_y
-	return distance / keySpeed

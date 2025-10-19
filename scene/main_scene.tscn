@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cmn6vre0lvvry" path="res://asset/foule_4.png" id="7_7l8gs"]
 [ext_resource type="Texture2D" uid="uid://b3pgxdud66ni4" path="res://asset/arrow.png" id="8_pi0uh"]
 [ext_resource type="PackedScene" uid="uid://cwm68c2ne5b0n" path="res://elements/keyLander/keyLander.tscn" id="10_86xya"]
-[ext_resource type="PackedScene" uid="uid://h7nkfr7li7ba" path="res://scene/pause.tscn" id="11_cj0ow"]
-[ext_resource type="Script" uid="uid://ua4mkre7res8" path="res://script/score.gd" id="12_xavy2"]
+[ext_resource type="PackedScene" path="res://scene/pause.tscn" id="11_cj0ow"]
+[ext_resource type="Script" path="res://script/score.gd" id="12_xavy2"]
 [ext_resource type="FontFile" uid="uid://c5gw3c5euwgx1" path="res://asset/funkrocker/PressStart2P-vaV7.ttf" id="13_7l8gs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66tet"]
